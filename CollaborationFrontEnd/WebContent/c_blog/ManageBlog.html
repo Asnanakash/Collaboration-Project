@@ -1,0 +1,29 @@
+<div class="container" ng-controller="BlogController">
+
+<table class="table table-bordered" align="center">
+<tr class="success">
+       <th>Blog ID</th>
+       <th>Blog Name</th>
+       <th>Created By</th>
+       <th>Created On</th>
+       <th>Approve/Reject</th>
+       <th>Delete</th>
+       </tr>
+       <tr ng-repeat="blog in blogData">
+         <td>{{blog.blogId}}</td>
+         <td>{{blog.blogName}}</td>
+         <td>{{blog.username}}</td>
+         <td>{{blog.createDate}}</td>
+         <td ng-show="blog.status=='NA'">
+         <input type="button" value="Approve" ng-click="approveBlog(blog.blogId)" class="btn btn-success"/>
+         </td>
+         <td ng-show="blog.status=='A'">
+            <input type="button" value="Reject" ng-click="rejectBlog(blog.blogId)" class="btn btn-danger"/>
+          </td>
+          <td>
+          <input type="button" value="Delete" ng-click="deleteBlog(blog.blogId)" class="btn btn-danger"/>
+          </td>
+            </tr>          
+         
+</table>
+</div>

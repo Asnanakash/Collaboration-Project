@@ -1,0 +1,30 @@
+<div class="container" ng-controller="BlogController">
+
+<table class="table table-bordered" align="center">
+<tr class="success">
+       <th>Blog ID</th>
+       <th>Blog Name</th>
+       <th>Created By</th>
+       <th>Created On</th>
+       <th>Operation</th>
+       </tr>
+       <tr ng-repeat="blog in blogData">
+         <td>{{blog.blogId}}</td>
+         <td>{{blog.blogName}}</td>
+         <td>{{blog.username}}</td>
+         <td>{{blog.createDate}}</td>
+          <td>
+          <input type="button" value="Show Blog" ng-click="showBlog(blog.blogId)" class="btn btn-success"/>
+          <div ng-show="currentUser.username==blog.username">
+          <input type="button" value="Delete" ng-click="deleteBlog(blog.blogId)" class="btn btn-danger"/>
+          
+          </div>
+           <input type="button" value="Edit" ng-click="editBlog(blog.blogId)" class="btn btn-success"/>
+          </td>
+            </tr>          
+         
+</table>
+
+</div>
+
+

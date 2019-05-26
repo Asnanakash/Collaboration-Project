@@ -1,0 +1,49 @@
+<div class="container" ng-controller="UserController">
+
+    <h1 class="well">
+        <center>
+            <font face="Monotype Corsiva">Sign Up Here</font>
+        </center>
+    </h1>
+
+<div class="col-lg-12 well">
+    <div class="row">
+        <form>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Login Name</label><input type="text" name="username"
+                        ng-model="User.username" placeholder="Enter User Name Here" 
+                        class="form-control">
+
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label>Password</label><input type="password" name="password"
+                        ng-model="User.password" placeholder="Enter Password Here" 
+                        class="form-control">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>User Name</label><input type="text" name="customerName"
+                        ng-model="User.customerName" placeholder="Enter User Name Here"
+                        class="form-control">
+
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label>Email Id</label><input type="email" name="emailId"
+                        ng-model="User.emailId" placeholder="Enter Email Id Here"
+                        class="form-control">
+                    </div>
+                </div>
+                <center>
+                <input type="submit" value="Register" class="btn btn-lg btn-info" ng-click="register()"/>
+                </center>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

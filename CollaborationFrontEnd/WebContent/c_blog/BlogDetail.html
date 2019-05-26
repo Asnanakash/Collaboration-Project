@@ -1,0 +1,77 @@
+
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+<style>
+.blog-content {
+	color: light blue !important;
+}
+</style>
+<div class="container" ng-controller="BlogCommentController">
+	<div class="well">
+		<div class="media">
+			<a class="pull-left" href="#"> <img class="media-object"
+				src="resources/blogcomment1.jpg" style="width:300px;height:400px;">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading blogContent">{{blogInfo.blogName}}</h4>
+				<span class="blog-content"><i
+					class="glyphicon glyphicon-calendar blog-content"></i>{{blogInfo.createDate}}</span>
+
+				<p class="text-right blog.blogContent">
+					<span><img class="img-circle"
+						src="http://localhost:8012/CollaborationMiddleWare/getImage/{{currentUser.username}}" width="600" height="650"
+						alt="" style="width: 43px; height: 43px; padding-right: 5px;" /></span>
+						<font color="black">{{currentUser.username}}</font>
+				</p>
+				<p class="blog-content">{{blog.blogContent}}</p>
+				<ul class="list-inline list-unstyled">
+					<li></li>
+					
+					
+					<li><textarea rows="3" cols="50" ng-model="blogComment.blogComment" name="blogComment"></textarea>
+						<button type="button" class="btn blog-content" ng-click="addComment()">AddComment</button></li>
+
+					<div>
+						<a ng-click="getAllBlogComments(blogComment.blogId)"
+							class="btn blog-content">Show Comments</a><br>
+
+						<ul ng-repeat="blogComment in blogComments|orderBy:'-date'" >
+							<li class="blog-content">{{blogComment.blogComment}} &nbsp; <b class="blog-content">PostedBy:
+									 {{blogComment.userName}}</b> <b class="blog-content" style="margin-left:10px"> PostedOn:
+									 </b>{{blogComment.commentdate | date}}  <br> <a href=""
+								ng-click="deleteBlogComment(blogComment.blogId)"><span
+									ng-show="currentUser.username==blogComment.userName"
+									class="pull-right glyphicon glyphicon-trash blog-content"
+									title="Delete This Comment"></span></a>
+
+							</li>
+						</ul>
+
+					</div>
+
+					<!-- <div ng-show="currentUser.role=='Admin'">
+						<button ng-show="blog.approved=='Pending'" type="button"
+							ng-click="approveBlog(blog.blogId)"
+							class="btn btn-success btn-sm a-btn-slide-text">Approve</button>
+						<button ng-show="blog.approved==	'Pending'" type="button"
+							ng-click="rejectBlog(blog.blogsId)"
+							class="btn btn-danger btn-sm a-btn-slide-text">Reject</button>
+					</div>-->
+
+					<li></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+</div>
