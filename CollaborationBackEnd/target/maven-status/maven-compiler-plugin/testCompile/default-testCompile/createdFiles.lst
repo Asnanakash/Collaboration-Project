@@ -1,0 +1,8 @@
+com\coll\test\UserDAOTestCase.class
+com\coll\test\JobDAOTestCase.class
+com\coll\test\GeneralTest.class
+com\coll\test\BlogCommentDAOTestCase.class
+com\coll\test\ForumCommentTestCase.class
+com\coll\test\BlogDAOTestCase.class
+com\coll\test\FriendDAOTestCase.class
+com\coll\test\ForumDAOTestCase.class
