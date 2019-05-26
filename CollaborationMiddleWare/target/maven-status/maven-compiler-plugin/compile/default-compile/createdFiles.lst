@@ -1,0 +1,11 @@
+com\coll\config1\WebInitializer.class
+com\coll\config1\WebSocketConfig.class
+com\coll\controller\ChatController.class
+com\coll\config1\WebResolver.class
+com\coll\controller\ProfilePictureController.class
+com\coll\controller\GenericRestController.class
+com\coll\controller\JobController.class
+com\coll\controller\UserController.class
+com\coll\controller\FriendController.class
+com\coll\controller\BlogController.class
+com\coll\controller\BlogCommentController.class
